@@ -1,0 +1,98 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<script type="text/javascript" src="css/jquery.js"></script>
+<script type="text/javascript" src="css/jquery.cookie.js"></script><script>
+$(function(){
+	var _menu_id = $.cookie('menu_id');	
+	$("#menu dt").click(function(){		
+		//將選單索引值寫入cookie
+		var _index = $("#menu dt").index(this);		
+		$.cookie("menu_id", _index);		
+		
+		var _this = $(this);
+		var _ans = $(this).next();
+		
+		if(_ans.is(":visible")){
+			_ans.slideUp();
+		}else{
+			$("#menu dd").slideUp();
+			_ans.slideDown();
+		}
+	}).next().slideUp();
+	
+	//當cookie值不等於空時，就展開選單
+	if($.cookie("menu_id")!=null){
+		$("#menu dd").eq(_menu_id).slideDown();	
+	}
+	
+	//清除cookie
+	$("#c-cookie").click(function(){	
+		$.cookie("menu_id", null);
+	});
+	
+});
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>:::::::::::::::::千尋九金水:::::::::::::::::2017臺灣網界博覽會~新北市立雙溪高中</title>
+<link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+body {
+	background-image: url(imgs/A33541.jpg);
+	background-repeat: no-repeat;
+	background-color: #F6F5FA;
+}
+</style>
+<!-- 
+若要深入了解檔案頂端 html 標籤周圍的條件式註解:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+如果您使用自訂的 Modernizr 組建 (http://www.modernizr.com/)，請執行下列動作:
+* 在這裡將連結插入您的 js
+* 將下列連結移至 html5shiv
+* 將「no-js」類別新增至頂端的 html 標籤
+* 如果您在 Modernizr 組建中包含 MQ Polyfill，也可以將連結移至 respond.min.js 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="css/respond.min.js"></script>
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+for (var i = 0; i < images.length; i++) { var image = images[i], width = String(image.currentStyle.width); if (width.indexOf('%') == -1) { continue; } image.origWidth = image.offsetWidth; image.origHeight = image.offsetHeight; imgCache.push(image); c.ieAlpha(image); image.style.width = width; }
+</script>
+</head>
+<body>
+<div id="fixed-nav">
+  <div align="center"><a href="index.htm" target="_self"><img src="imgs/buttom1.png" width="100" height="45"></a><a href="p1.htm" target="_self"><img src="imgs/buttom3.png" width="100"></a><a href="p2.htm" target="_self"><img src="imgs/buttom4.png" width="100"></a><a href="p3.htm" target="_self"><img src="imgs/buttom5.png" alt="" width="100"></a><a href="p3.htm" target="_self"></a><a href="aboutteam.htm" target="_self"><img src="imgs/buttom7.png" width="100"></a><a href="narrative.htm" target="_self"><img src="imgs/buttom8.png" width="100"></a></div>
+</div>
+<div id="header">
+  <div align="center">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><img src="imgs/img.gif"></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p class="font" style="font-size:30px;">昔日的街道 往日的點滴</p>
+    <p class="font" style="font-size:30px;">帶你見證九金水傳奇    </p>
+    <p style="font-size:30px;">&nbsp;</p>
+    <p style="font-size:30px;"><img src="imgs/512.jpg" width="202" height="383" class="img"></p>
+    <p class="font" style="font-size:30px;">&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+<div id="section"></div>
+</body>
+</html>
